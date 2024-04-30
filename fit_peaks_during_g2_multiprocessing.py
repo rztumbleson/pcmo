@@ -57,8 +57,8 @@ def lorentzian2d(x, y, amplitude=1., centerx=0., centery=0., sigmax=1., sigmay=1
     return 2*amplitude*lorentzian(R)/(np.pi*sigmax*sigmay) + offset
     
 if __name__ == '__main__':
-    temp = 220
-    file = rf'./data/4-4-2024/{temp}k_1.h5'
+    temp = 230
+    file = rf'./data\4-4-2024\{temp:.0f}k_xpcs_1.h5'
     roi = np.s_[150:1000, 1100:1900]
 
     print('started loading data')
@@ -72,4 +72,4 @@ if __name__ == '__main__':
         
     
     df = pd.DataFrame(out)
-    df.to_csv(f'./data/4-4-2024/{temp}K_hour_wait_lorentzian_fits_df.csv')
+    df.to_csv(f'./data/4-4-2024/{temp}K_2hour_wait_lorentzian_fits_df.csv')
